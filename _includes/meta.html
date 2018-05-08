@@ -1,0 +1,9 @@
+<div class="article_meta">
+	<div class="article_date">{{ post.date | date: "%b %-d, %Y" }}</div>
+	<div class="article_categories">
+	{% for category in post.categories %}
+		<a href="/categories#tag_{{ category }}" class="tag_{{ category }}">{{ category }}</a>
+	{% endfor %}
+	</div>
+	<div style="clear:both"></div>
+</div>

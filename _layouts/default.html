@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+
+	{% include head.html %}
+
+	<body>
+		{% include header.html %}
+		<div class="isSmall" style="display:none"></div>
+		<div class="isSocial" style="display:none">{{ site.social_buttons }}</div>
+		<div class="url" style="display:none">{{ site.url }}</div>
+		<div class="baseurl" style="display:none">{{ site.baseurl }}</div>
+		<div id="main">{{ content }}</div>
+		{% include footer.html %}
+	</body>
+	<script src="{{ "/js/script.js" | prepend: site.baseurl }}"></script>
+</html>

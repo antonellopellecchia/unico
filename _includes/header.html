@@ -1,0 +1,14 @@
+<div id="site_header">
+	<div id="site_title"><a href="{{ site.baseurl }}/"><img src="{{ "/images/logo.png" | prepend: site.baseurl }}" />{{ site.title | escape }}</a></div>
+	<ul id="navigation">
+		<li><a href="{{ site.baseurl }}/"{% if page.title == nil %} class="active"{% endif %}>Articles</a></li>
+		{% for site_page in site.pages %}
+			{% if site_page.title %}
+				<li><a href="{{ site_page.url | prepend: site.baseurl }}"{% if page.title == site_page.title %}class="active"{% endif %}>{{ site_page.title }}</a></li>
+			{% endif %}
+		{% endfor %}
+		<li><input type="text" placeholder="Search..." id="search_input" /></li>
+		<li id="search_entry"><a href="#" class="search_button"><img src="{{ "/images/search.png" | prepend: site.baseurl }}" /></a></li>
+	</ul>
+	<div style="clear:both"></div>
+</div>

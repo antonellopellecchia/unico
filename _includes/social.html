@@ -1,0 +1,38 @@
+	{% assign post_url = post.url | prepend: site.baseurl | prepend: site.url | cgi_escape %}
+	<div class="article_share">{% if site.social_buttons %}
+
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+			js = d.createElement(s); js.id = id;
+			js.src = "//connect.facebook.net/it_IT/sdk.js#xfbml=1&version=v2.7";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
+
+		{% if site.social_twitter %}
+			<a class="icon_twitter"
+				href="https://twitter.com/share?
+					text={{ post.title }}
+					&url={{ post_url }}"
+				rel="nofollow" target="_blank" title="Share on Twitter">
+				<i class="fa fa-twitter"></i>
+			</a>
+		{% endif %}
+		{% if site.social_facebook %}
+		<div class="fb-share-button" style="display:inline" data-href="{{ post_url }}"
+		data-layout="icon" data-mobile-iframe="true">
+			<a class="icon_facebook fb-xfbml-parse-ignore" target="_blank"
+				href="https://www.facebook.com/sharer/sharer.php?u={{ post_url }}&amp;src=sdkpreparse">
+				<i class="fa fa-facebook"></i>
+			</a>
+		</div>
+		{% endif %}
+		{% if site.social_googleplus %}
+		<a class="icon_googleplus"
+			href="https://plus.google.com/share?url={{ post_url }}"
+			onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+			<i class="fa fa-google-plus"></i>
+		</a>
+		{% endif %}
+	{% endif %}</div>

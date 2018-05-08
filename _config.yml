@@ -1,0 +1,25 @@
+# System settings
+host: 0.0.0.0
+
+# Site settings
+title: Unico
+description: > # this means to ignore newlines until "baseurl:"
+  Write an awesome description for your new site here. It will
+  appear in your document head meta (for  Google search results),
+  in the footer and in your feed.xml site description.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site
+paginate: 7
+
+# User settings
+disqus_enabled: False
+disqus_username: myusername
+social_buttons: True
+social_twitter: True
+social_facebook: True
+social_googleplus: True
+
+# Build settings
+markdown: kramdown
+gems:
+  - jekyll-paginate

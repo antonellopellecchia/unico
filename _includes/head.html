@@ -1,0 +1,27 @@
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+
+	<link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+	<link href='//fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+	<link rel="stylesheet" type="text/css" href="{{ "/css/reset.css" | prepend: site.baseurl }}" />
+	<link rel="stylesheet" type="text/css" href="{{ "/css/style.css" | prepend: site.baseurl }}" />
+	<link rel="stylesheet" media="(max-width: 800px)" href="{{ "/css/small.css" | prepend: site.baseurl }}" />
+	<link rel="icon" href="{{ "/images/favicon.png" | prepend: site.baseurl }}" type="image/png" />
+
+	<link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+	<link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
+
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/styles/tomorrow.min.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/highlight.min.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+	<script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+	<script src="{{ "/js/script.js" | prepend: site.baseurl }}"></script>
+
+	<title>{% if page.title %}{{ page.title | escape }} / {% endif %}{{ site.title | escape }}</title>
+</head>

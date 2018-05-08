@@ -1,0 +1,22 @@
+---
+layout: default
+---
+	
+	<div class="article group" style="display:none"></div>
+	{% for category in site.categories %}
+		{% assign tag = category | first %}
+		{% assign size = category | last | size %}
+		{% if size == 1 %}{% assign word = 'post' %}
+		{% else %}{% assign word = 'posts' %}{% endif %}
+
+		<div class="category tag_{{ tag }}">
+			<div class="category_title">{{ size }} {{ word }} in {{ tag }}</div>
+			{% for post in site.posts %}
+				{% if post.categories contains tag %}
+					{% include post_group.html %}
+				{% endif %}
+			{% endfor %}
+		</div>
+		<div style="clear:both"></div>
+	{% endfor %}
+	<script src="{{ "/js/categories.js" | prepend: site.baseurl }}"></script>

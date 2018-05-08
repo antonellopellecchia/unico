@@ -1,0 +1,7 @@
+<div class="article group">
+	<a class="article_anchor" href="{{ post.url | prepend: site.baseurl }}">
+		<div class="article_image"><img src="{{ post.image | prepend: "/images/covers/" | prepend: site.baseurl }}" alt="{{ post.title }}" /></div>
+		<div class="article_date">{{ post.date | date: "%b %-d, %Y" }}</div>
+		<div class="article_title">{{ post.title }}</div>
+	</a>
+</div>

@@ -1,0 +1,28 @@
+---
+layout: default
+---
+	
+	<ul id="category_list">
+		{% for category in site.categories %}
+			{% assign tag = category | first %}
+			<li class="tag_{{ tag }}">
+				<a href="{{ site.baseurl }}/categories#tag_{{ tag }}" class="tag_{{ tag }}">{{ tag }}</a>
+			</li>
+		{% endfor %}
+	</ul>
+
+	<div id="article_group">
+		{% for post in paginator.posts %}
+			{% include post_group.html %}
+		{% endfor %}
+		<div style="clear:both"></div>
+	</div>
+
+	<div id="archive_pagination">
+		{% if paginator.previous_page %}
+			<a href="{{ paginator.previous_page_path | prepend: site.baseurl }}" class="previous">previous page</a>
+		{% endif %}
+		{% if paginator.next_page %}
+			<a href="{{ paginator.next_page_path | prepend: site.baseurl }}" class="next">next page</a>
+		{% endif %}
+	</div>
